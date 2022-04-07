@@ -61,6 +61,7 @@ dependencies:
   bluetooth_print: ^3.0.1
   cloud_functions: ^3.2.10
   json_annotation: ^4.4.0
+  colours: ^0.0.2
 
 
 dev_dependencies:

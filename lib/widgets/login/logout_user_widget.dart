@@ -16,17 +16,21 @@ class LogOutUser extends StatelessWidget {
       child: Column(
         crossAxisAlignment: CrossAxisAlignment.start,
         children: [
-          Container(
-            width: double.infinity,
-            height: 200,
-            padding: EdgeInsets.only(left: 20, right: 20),
-            margin: EdgeInsets.only(top: 20),
-            child: Image.asset(
-              "assets/shopping.jpeg",
-              width: 100,
-              height: 100,
-            ),
+          Center(
+            child: Container(
+                padding: EdgeInsets.only(left: 20, right: 20),
+                margin: EdgeInsets.only(top: 50),
+                child: ClipRRect(
+                  borderRadius: BorderRadius.circular(20),
+                  child: Image.asset(
+                    "assets/shopping.jpeg",
+                    width: 150,
+                    height: 150,
+                  ),
+                ),
+              ),
           ),
+
           //This argument is not necessarily but to change widget flow
           Obx(() => LoginFlowWidget(authState: _controller.authState.value,))
         ],

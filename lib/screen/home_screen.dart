@@ -115,14 +115,14 @@ class _HomeScreenState extends State<HomeScreen> {
                         child: ListTile(
                           title: Text('Log in'),
                           leading: Icon(
-                            Icons.add_to_home_screen,
+                            Icons.key_outlined,
                             color: Colors.black,
                           ),
                         ),
                       )
                     : new UserAccountsDrawerHeader(
                         accountName: Text(
-                          'Partner',
+                          "Halo Fashion Star's Partner",
                           style: TextStyle(
                             color: Colors.black,
                           ),
@@ -153,9 +153,9 @@ class _HomeScreenState extends State<HomeScreen> {
                   checkInPartner();
                 },
                 child: ListTile(
-                  title: Text('Partnership'),
+                  title: Text('Partner Page (Member Only)'),
                   leading: Icon(
-                    Icons.vpn_key,
+                    Icons.handshake_outlined,
                     color: Colors.indigo,
                   ),
                 ),
@@ -172,27 +172,27 @@ class _HomeScreenState extends State<HomeScreen> {
                 ),
               ),
 
-              InkWell(
-                onTap: () {},
-                child: ListTile(
-                  title: Text('Favourites'),
-                  leading: Icon(
-                    Icons.favorite,
-                    color: Colors.red,
-                  ),
-                ),
-              ),
-
-              InkWell(
-                onTap: () {},
-                child: ListTile(
-                  title: Text('Facebook Page'),
-                  leading: Icon(
-                    Icons.facebook_outlined,
-                    color: Colors.blue,
-                  ),
-                ),
-              ),
+              // InkWell(
+              //   onTap: () {},
+              //   child: ListTile(
+              //     title: Text('Favourites'),
+              //     leading: Icon(
+              //       Icons.favorite,
+              //       color: Colors.red,
+              //     ),
+              //   ),
+              // ),
+              //
+              // InkWell(
+              //   onTap: () {},
+              //   child: ListTile(
+              //     title: Text('Facebook Page'),
+              //     leading: Icon(
+              //       Icons.facebook_outlined,
+              //       color: Colors.blue,
+              //     ),
+              //   ),
+              // ),
               SizedBox(
                 height: 10,
               ),
@@ -230,11 +230,12 @@ class _HomeScreenState extends State<HomeScreen> {
         backgroundColor: appBarColor,
         elevation: 0,
         title: Text(
-          "HALO FASHION STAR",
+          "𝑯𝑨𝑳𝑶 𝑭𝒂𝒔𝒉𝒊𝒐𝒏 𝑺𝒕𝒂𝒓",
           style: TextStyle(
-            fontSize: 14,
+            fontSize: 16,
             fontWeight: FontWeight.bold,
-            wordSpacing: 3,
+            wordSpacing: 2,
+            letterSpacing: 2,
             color: appBarTitleColor,
           ),
         ),

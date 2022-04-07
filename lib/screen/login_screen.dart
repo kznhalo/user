@@ -13,12 +13,13 @@ class LoginScreen extends StatelessWidget {
       backgroundColor: scaffoldBackground,
       appBar: AppBar(
         title: Text(
-          "HALO FASHION STAR",
+          "𝑯𝑨𝑳𝑶 𝑭𝒂𝒔𝒉𝒊𝒐𝒏 𝑺𝒕𝒂𝒓",
           style: TextStyle(
               fontSize: 16,
               fontWeight: FontWeight.bold,
               color: appBarTitleColor,
-              wordSpacing: 1),
+              wordSpacing: 2,
+          letterSpacing: 1),
         ),
         elevation: 0,
         backgroundColor: detailBackgroundColor,

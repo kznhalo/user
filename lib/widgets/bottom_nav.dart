@@ -1,3 +1,4 @@
+import 'package:colours/colours.dart';
 import 'package:flutter/material.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 import 'package:get/get.dart';
@@ -43,7 +44,7 @@ class BottomNav extends StatelessWidget {
                       FontAwesomeIcons.home,
                       color: ((controller.navIndex.value == 0) &&
                               !controller.isPartnerPage.value)
-                          ? homeIndicatorColor
+                          ? Colours.gold
                           : null,
                     ),
                   ),
@@ -103,7 +104,7 @@ class BottomNav extends StatelessWidget {
                           FontAwesomeIcons.shoppingCart,
                           color: ((controller.navIndex.value == 2) &&
                                   !controller.isPartnerPage.value)
-                              ? homeIndicatorColor
+                              ? Colours.gold
                               : null,
                         ),
                         CircleAvatar(
@@ -133,7 +134,7 @@ class BottomNav extends StatelessWidget {
                       FontAwesomeIcons.solidHeart,
                       color: ((controller.navIndex.value == 3) &&
                               !controller.isPartnerPage.value)
-                          ? homeIndicatorColor
+                          ? Colours.red
                           : null,
                     ),
                   ),
@@ -152,7 +153,7 @@ class BottomNav extends StatelessWidget {
                       FontAwesomeIcons.stickyNote,
                       color: ((controller.navIndex.value == 4) &&
                               !controller.isPartnerPage.value)
-                          ? homeIndicatorColor
+                          ? Colours.gold
                           : null,
                     ),
                   ),

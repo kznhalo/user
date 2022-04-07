@@ -1,4 +1,5 @@
 import 'package:cached_network_image/cached_network_image.dart';
+import 'package:colours/colours.dart';
 import 'package:flutter/material.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 import 'package:get/get.dart';
@@ -112,7 +113,7 @@ class CartView extends StatelessWidget {
         GetBuilder<HomeController>(builder: (controller) {
           return Container(
             width: double.infinity,
-            height: 300,
+            height: 220,
             child: Card(
               margin: EdgeInsets.only(
                 top: 10,
@@ -134,8 +135,8 @@ class CartView extends StatelessWidget {
                         mainAxisAlignment: MainAxisAlignment.spaceBetween,
                         children: [
                           Text(
-                            "ပုံမှန်ကုန်ပစ္စည်းအတွက် ကျသင့်ငွေ\n"
-                            "${controller.totalUsualProductCount}ခု ",
+                            "အထည် အတွက် ကျသင့်ငွေ"
+                            "   ${controller.totalUsualProductCount} ခု ",
                             style: TextStyle(
                               fontSize: 12,
                               fontWeight: FontWeight.w400,
@@ -163,8 +164,8 @@ class CartView extends StatelessWidget {
                         mainAxisAlignment: MainAxisAlignment.spaceBetween,
                         children: [
                           Text(
-                            "အထူးကုန်ပစ္စည်းအတွက် ကျသင့်ငွေ\n"
-                            "${controller.totalHotProductCount}ခု",
+                            "Hot Sale အထည် အတွက် ကျသင့်ငွေ"
+                            "   ${controller.totalHotProductCount} ခု",
                             style: TextStyle(
                               fontSize: 12,
                               fontWeight: FontWeight.w400,
@@ -190,7 +191,7 @@ class CartView extends StatelessWidget {
                         mainAxisAlignment: MainAxisAlignment.spaceBetween,
                         children: [
                           Text(
-                            "ကုန်ပစ္စည်းအတွက် ကျသင့်ငွေ",
+                            "အထည် အားလုံး အတွက် ကျသင့်ငွေ",
                             style: TextStyle(
                               fontSize: 12,
                               fontWeight: FontWeight.w400,
@@ -215,17 +216,11 @@ class CartView extends StatelessWidget {
                       child: Row(
                         mainAxisAlignment: MainAxisAlignment.spaceBetween,
                         children: [
-                          Text(
-                            "ပို့ဆောင်စရိတ်",
-                            style: TextStyle(
-                              fontSize: 12,
-                              fontWeight: FontWeight.w400,
-                            ),
-                          ),
+
                           //DropDown TownShip List
                           Container(
-                            width: 100,
-                            height: 50,
+                            width: 200,
+                            height: 30,
                             child: GetBuilder<HomeController>(
                                 builder: (controller) {
                               return InkWell(
@@ -245,6 +240,9 @@ class CartView extends StatelessWidget {
                                       controller
                                               .townShipNameAndFee["townName"] ??
                                           "မြို့နယ်",
+                                      style: TextStyle(
+                                        fontSize: 12
+                                      ),
                                       overflow: TextOverflow.ellipsis,
                                       maxLines: 1,
                                     ),
@@ -256,10 +254,19 @@ class CartView extends StatelessWidget {
                               );
                             }),
                           ),
+
+                          Text(
+                            "ပို့ဆောင်စရိတ်",
+                            style: TextStyle(
+                              fontSize: 12,
+                              fontWeight: FontWeight.w400,
+                            ),
+                          ),
+
                           GetBuilder<HomeController>(builder: (controller) {
                             return Text(
                               controller.townShipNameAndFee.isEmpty
-                                  ? "0ကျပ်"
+                                  ? "0 ကျပ်"
                                   : " ${controller.townShipNameAndFee["fee"]} ကျပ်",
                               style: TextStyle(
                                 fontSize: 12,
@@ -321,7 +328,7 @@ class CartView extends StatelessWidget {
           margin: EdgeInsets.only(top: 10, left: 10, right: 10, bottom: 10),
           child: ElevatedButton(
             style: ButtonStyle(
-              backgroundColor: MaterialStateProperty.all(homeIndicatorColor),
+              backgroundColor: MaterialStateProperty.all(Colours.gold),
               foregroundColor: MaterialStateProperty.all(Colors.white),
             ),
             onPressed: () {
@@ -342,7 +349,9 @@ class CartView extends StatelessWidget {
                 Get.snackbar('Error', "Cart is empty");
               }
             },
-            child: Text("Order တင်ရန် နှိပ်ပါ"),
+            child: Text("Order တင်ရန် နှိပ်ပါ", style: TextStyle(
+              color: Colors.black,
+            ),),
           ),
         )
       ],
@@ -362,7 +371,7 @@ class CartView extends StatelessWidget {
               right: BorderSide(),
             ),
           ),
-          width: 170,
+          width: double.infinity,
           child: ListView.builder(
             shrinkWrap: true,
             itemCount: divisionList.length,
@@ -386,7 +395,7 @@ class CartView extends StatelessWidget {
                 },
                 child: AnimatedContainer(
                   color: controller.mouseIndex == divisionIndex
-                      ? Colors.orange
+                      ? Colours.gold
                       : Colors.white,
                   duration: const Duration(milliseconds: 200),
                   child: Row(
@@ -414,15 +423,15 @@ class CartView extends StatelessWidget {
     return Align(
       alignment: Alignment.bottomCenter,
       child: Container(
-        width: 230,
-        height: MediaQuery.of(Get.context!).size.height * 0.4,
+        width: MediaQuery.of(Get.context!).size.width,
+        height: MediaQuery.of(Get.context!).size.height,
         decoration: BoxDecoration(
-          border: Border(
-            top: BorderSide(),
-            bottom: BorderSide(),
-            left: BorderSide(),
-            right: BorderSide(),
-          ),
+          // border: Border(
+          //   top: BorderSide(),
+          //   bottom: BorderSide(),
+          //   left: BorderSide(),
+          //   right: BorderSide(),
+          // ),
           color: Colors.white,
         ),
         child: ListView(
@@ -498,7 +507,7 @@ Widget nextButton() {
     height: 50,
     width: double.infinity,
     decoration: BoxDecoration(
-      color: Colors.orange,
+      color: Colours.gold,
       borderRadius: BorderRadius.only(
         bottomLeft: Radius.circular(20),
         bottomRight: Radius.circular(20),
@@ -512,7 +521,7 @@ Widget nextButton() {
           Get.toNamed(checkOutScreen);
         }
       },
-      child: Text("Next  ➡", style: TextStyle(color: Colors.white)),
+      child: Text("Next  ➡", style: TextStyle(color: Colors.black)),
     ),
   );
 }

@@ -1,3 +1,4 @@
+import 'package:colours/colours.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:kozarni_ecome/controller/home_controller.dart';
@@ -32,11 +33,11 @@ class BrandCategory extends StatelessWidget {
                       style: ButtonStyle(
                         backgroundColor: controller.brandCategory.value ==
                                 controller.brandCategoryList()[i]
-                            ? MaterialStateProperty.all(homeIndicatorColor)
+                            ? MaterialStateProperty.all(Colours.gold)
                             : MaterialStateProperty.all(Colors.white),
                         foregroundColor: controller.brandCategory.value ==
                                 controller.brandCategoryList()[i]
-                            ? MaterialStateProperty.all(Colors.white)
+                            ? MaterialStateProperty.all(Colors.black)
                             : MaterialStateProperty.all(Colors.black),
                         shape: MaterialStateProperty.all(
                           RoundedRectangleBorder(

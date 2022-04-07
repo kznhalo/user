@@ -159,8 +159,8 @@ class HomeController extends GetxController {
                     "text": priceList[1],
                   }
                 : {
-                    "price": element.retailPrice,
-                    "text": priceList[0],
+                    "price": element.showcaseMap["price"],
+                    "text": element.showcaseMap['text'],
                   },
           );
         }
@@ -179,10 +179,15 @@ class HomeController extends GetxController {
         isHotDeal: isHotSales,
         retailPrice: itemModel.price,
         wholesalePrice: itemModel.discountprice,
-        showcaseMap: {
-          "price": itemModel.price,
-          "text": priceList[0],
-        }, //Because this is initial item
+        showcaseMap: (!isHotSales && !itemModel.isOwnBrand)
+            ? {
+                "price": itemModel.price,
+                "text": priceList[0],
+              }
+            : {
+                "price": itemModel.discountprice,
+                "text": priceList[1],
+              }, //Because this is initial item
       ));
     }
   }
@@ -358,8 +363,8 @@ class HomeController extends GetxController {
                       "text": priceList[1],
                     }
                   : {
-                      "price": element.retailPrice,
-                      "text": priceList[0],
+                      "price": element.showcaseMap["price"],
+                      "text": element.showcaseMap['text'],
                     },
         );
       }
@@ -378,16 +383,16 @@ class HomeController extends GetxController {
         if (element.count > 1) {
           return p.copyWith(
             count: element.count - 1,
-            showcaseMap: ((element.count - 1 >= 10) &&
+            showcaseMap: ((element.count - 1 < 10) &&
                     !p.isHotDeal &&
                     !element.isOwnBrand)
                 ? {
-                    "price": element.wholesalePrice,
-                    "text": priceList[1],
-                  }
-                : {
                     "price": element.retailPrice,
                     "text": priceList[0],
+                  }
+                : {
+                    "price": element.showcaseMap["price"],
+                    "text": element.showcaseMap['text'],
                   },
           );
         }

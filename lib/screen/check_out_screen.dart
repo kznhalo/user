@@ -1,3 +1,4 @@
+import 'package:colours/colours.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
@@ -55,10 +56,10 @@ class _CheckOutScreenState extends State<CheckOutScreen> {
         builder: (controller) {
           return Theme(
             data: ThemeData(
-                primarySwatch: Colors.orange,
+                primarySwatch: Colours.gold,
                 colorScheme: ColorScheme.light(
-                  primary: Colors.orange,
-                  secondary: Colors.orange,
+                  primary: Colours.gold,
+                  secondary: Colours.gold,
                 )),
             child: Stepper(
               currentStep: controller.checkOutStep.value,
@@ -88,7 +89,8 @@ class _CheckOutScreenState extends State<CheckOutScreen> {
                         child: Center(
                           child: Text(
                             "Order အတည်ပြုမည်",
-                            style: TextStyle(wordSpacing: 2, fontSize: 16),
+                            style: TextStyle(wordSpacing: 2, fontSize: 16,
+                            color: Colors.black),
                           ),
                         ),
                       )
